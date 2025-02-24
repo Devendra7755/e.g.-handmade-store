@@ -4,86 +4,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handmade Store</title>
+    <title>Artisan Crafts Collective</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #a26769;
+            --secondary-color: #f0d8d1;
+            --accent-color: #6d6875;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            background: #fff9f5;
+            color: #333;
+        }
+
+        header {
+            background: var(--primary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('https://images.pexels.com/photos/753417/pexels-photo-753417.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             text-align: center;
         }
-        header {
-            background: #ff6363;
-            padding: 20px;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
+
         .container {
             max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .product-card {
             background: white;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
-        .product {
-            display: inline-block;
-            width: 30%;
-            margin: 10px;
-            padding: 10px;
-            background: #ffe8a3;
-            border-radius: 10px;
+
+        .product-card:hover {
+            transform: translateY(-5px);
         }
-        .product img {
-            width: 100%;
-            border-radius: 10px;
+
+        .product-image {
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--secondary-color);
         }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            background: #ff6363;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-color);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             text-decoration: none;
-            margin-top: 10px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            cursor: pointer;
         }
+
         .btn:hover {
-            background: #ff3f3f;
+            background: #8a5759;
         }
+
         footer {
-            margin-top: 20px;
-            padding: 10px;
-            background: #ff6363;
+            background: var(--accent-color);
             color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .social-links {
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <header>Handmade Creations</header>
+    <header>
+        <a href="#" class="logo">Artisan Collective</a>
+    </header>
+
+    <div class="hero">
+        <h1>Crafted with Passion<br>Made with Love</h1>
+    </div>
+
     <div class="container">
-        <h2>Our Best Handmade Products</h2>
-        <div class="product">
-            <img src="product1.jpg" alt="Handmade Product 1">
-            <h3>Handmade Necklace</h3>
-            <p>Beautiful handcrafted necklace made with love.</p>
-            <a href="#" class="btn">Buy Now</a>
-        </div>
-        <div class="product">
-            <img src="product2.jpg" alt="Handmade Product 2">
-            <h3>Decorative Vase</h3>
-            <p>Eco-friendly and stylish home decor.</p>
-            <a href="#" class="btn">Buy Now</a>
-        </div>
-        <div class="product">
-            <img src="product3.jpg" alt="Handmade Product 3">
-            <h3>Artistic Tote Bag</h3>
-            <p>Perfect blend of fashion and creativity.</p>
-            <a href="#" class="btn">Buy Now</a>
+        <div class="products-grid">
+            <!-- Handmade Jewelry -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/9789827/pexels-photo-9789827.jpeg" alt="Handmade Jewelry" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Artisan Necklace Collection</h3>
+                    <p class="product-description">Hand-forged silver jewelry with natural gemstones, each piece unique</p>
+                    <p class="price">$89 - $149</p>
+                    <a href="#" class="btn">View Collection</a>
+                </div>
+            </div>
+
+            <!-- Ceramics -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/585418/pexels-photo-585418.jpeg" alt="Ceramic Pottery" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Stoneware Collection</h3>
+                    <p class="product-description">Wheel-thrown ceramic dinnerware set with organic textures</p>
+                    <p class="price">$45 - $120</p>
+                    <a href="#" class="btn">Custom Order</a>
+                </div>
+            </div>
+
+            <!-- Textiles -->
+            <div class="product-card">
+                <img src="https://images.pexels.com/photos/4066293/pexels-photo-4066293.jpeg" alt="Handwoven Textiles" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Handwoven Textiles</h3>
+                    <p class="product-description">Organic cotton throws with natural plant-based dyes</p>
+                    <p class="price">$129 - $199</p>
+                    <a href="#" class="btn">Explore Colors</a>
+                </div>
+            </div>
         </div>
     </div>
-    <footer>&copy; 2025 Handmade Store. All rights reserved.</footer>
+
+    <footer>
+        <div class="container">
+            <p>Follow Our Journey</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Pinterest</a>
+            </div>
+            <p>© 2023 Artisan Collective. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
